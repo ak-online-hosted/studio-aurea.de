@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: studio-aurea-de-www
+  labels:
+    app: studio-aurea-de-www
+  namespace: hosted
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: studio-aurea-de-www
+  template:
+    metadata:
+      labels:
+        app: studio-aurea-de-www
+    spec:
+      containers:
+      - name: nginx
+        image:  ghcr.io/ak-online-hosted/studio-aurea.de:latest
+        ports:
+        - name: http
+          containerPort: 80

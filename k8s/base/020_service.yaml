@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-studio-aurea-de
+  namespace: hosted
+spec:
+  selector:
+    app: studio-aurea-de-www
+  ports:
+    - protocol: TCP
+      port: 80
+      name: http
+  clusterIP: None
+  type: ClusterIP

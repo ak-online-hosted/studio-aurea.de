@@ -1,0 +1,38 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ../base
+
+nameSuffix: -prod
+labels:
+  - pairs:
+      branch: prod
+    includeSelectors: true
+    includeTemplates: true
+patches:
+  - target:
+      kind: Ingress
+    patch: |-
+      apiVersion: networking.k8s.io/v1
+      kind: Ingress
+      metadata:
+        name: studio-aurea-prod
+      spec:
+        ingressClassName: nginx
+        tls:
+          - hosts:
+              - studio-aurea.de
+              - www.studio-aurea.de
+            secretName: "tls-studio-aurea-prod"
+        rules:
+         - host: studio-aurea.de
+           http:
+            paths:
+              - pathType: Prefix
+                path: /
+                backend:
+                  service:
+                    name: svc-studio-aurea-prod
+                    port:
+                      name: http

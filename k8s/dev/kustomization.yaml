@@ -1,0 +1,37 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ../base
+
+nameSuffix: -dev
+labels:
+  - pairs:
+      branch: dev
+    includeSelectors: true
+    includeTemplates: true
+patches:
+  - target:
+      kind: Ingress
+    patch: |-
+      apiVersion: networking.k8s.io/v1
+      kind: Ingress
+      metadata:
+        name: studio-aurea-de-dev
+      spec:
+        tls:
+          - hosts:
+            - &host studio-aurea.customers.ak-online.be
+            secretName: "tls-dev-studio-aurea-de-dev"
+        rules:
+         - host: *host
+           http:
+            paths:
+              - pathType: Prefix
+                path: /
+                backend:
+                  service:
+                    name: svc-studio-aurea-de-dev
+                    port:
+                      name: http
+

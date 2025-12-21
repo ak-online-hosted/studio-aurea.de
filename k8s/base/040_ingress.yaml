@@ -1,0 +1,32 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: studio-aurea-de
+  annotations:
+    traefik.ingress.kubernetes.io/router.tls: "true"
+    traefik.ingress.kubernetes.io/redirect-entry-point: https
+    nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
+    # since this cannot be set via annotation, we need to resort to a snippet
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      if ($scheme = https) {
+        more_set_headers "Strict-Transport-Security: max-age=15724800";
+      }
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+  namespace: hosted
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - &host studio-aurea.customers.ak-online.be
+      secretName: "tls-studio-aurea-de"
+  rules:
+   - host: *host
+     http:
+      paths:
+        - pathType: Prefix
+          path: /
+          backend:
+            service:
+              name: svc-studio-aurea-de
+              port:
+                name: http
