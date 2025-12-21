@@ -1,0 +1,27 @@
+:root {
+	--bgcolor: black;
+}
+
+body {
+	background-color: var(--bgcolor);
+	width: 100%;
+	margin: 0;
+}
+
+#logo {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 100%;
+	object-fit: contain;
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--bgcolor: #fefdfb;
+	}
+	#logo {
+		content: url("/logo-light.png");
+	}
+}
+
