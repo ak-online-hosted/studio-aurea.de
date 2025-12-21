@@ -17,7 +17,7 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - &host studio-aurea.customers.ak-online.be
+        - &host studio-aurea.customer.ak-online.be
       secretName: "tls-studio-aurea-de"
   rules:
    - host: *host
