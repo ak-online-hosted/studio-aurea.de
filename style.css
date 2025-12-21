@@ -1,27 +1,100 @@
 :root {
 	--bgcolor: black;
+	--fgcolor: #d3b14b;
 }
 
 body {
+	color: var(--fgcolor);
 	background-color: var(--bgcolor);
 	width: 100%;
-	margin: 0;
+	margin-top: 0;
+	margin-bottom: 3em;
+	font-family: sans-serif;
 }
 
 #logo {
+	--hpad: 1rem;
+	--vpad: 3rem;
 	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 100%;
+	margin: 0 auto;
+	padding: var(--vpad) var(--hpad) calc(var(--vpad) + 1rem) var(--hpad);
+	max-width: calc(100% - 2 * var(--hpad));
 	object-fit: contain;
+	object-position: top;
+	aspect-ratio: auto 412/340;
+}
+
+.hrcontainer {
+	padding: 0 3em;
+}
+
+hr {
+	margin-top: 20px;
+	border-color: var(--fgcolor);
+}
+
+p {
+	text-align: center;
+	font-size: 1.2rem;
+}
+
+a {
+	text-decoration: underline;
+	color: var(--fgcolor)
+}
+
+.instagram {
+	padding-left: 1em;
+}
+.instagram:before {
+	content: '';
+	background: url('Instagram_Glyph_Gradient150.png');
+	background-size: cover;
+	position: absolute;
+	width: 1em;
+	height: 1em;
+	margin-left: -1em;
+}
+
+#imprint {
+	font-size: 1rem;
+}
+#imprint h2 {
+	font-size: 1rem;
+}
+
+.flex-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+#imprint div {
+	flex: 42%;
+	margin: 0 1rem;
+}
+
+#imprint div:first-child {
+	text-align: right;
 }
 
 @media (prefers-color-scheme: light) {
 	:root {
 		--bgcolor: #fefdfb;
+		--fgcolor: #c7ae58;
 	}
 	#logo {
 		content: url("/logo-light.png");
 	}
 }
 
+@media (max-width: 46rem) {
+	.flex-container {
+		flex-direction: column;
+	}
+	#imprint div,
+	#imprint div:first-child {
+		text-align: center;
+	}
+}
