@@ -43,19 +43,6 @@ a {
 	color: var(--fgcolor)
 }
 
-.instagram {
-	padding-left: 1em;
-}
-.instagram:before {
-	content: '';
-	background: url('Instagram_Glyph_Gradient150.png');
-	background-size: cover;
-	position: absolute;
-	width: 1em;
-	height: 1em;
-	margin-left: -1em;
-}
-
 #kontakt {
 	font-size: 1rem;
 }
@@ -86,6 +73,11 @@ a {
 #footer li {
 	display: inline;
 }
+
+h1, h2 {
+	text-align: center;
+}
+
 
 @media (prefers-color-scheme: light) {
 	:root {
