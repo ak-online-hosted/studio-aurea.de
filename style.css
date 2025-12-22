@@ -78,6 +78,15 @@ h1, h2 {
 	text-align: center;
 }
 
+#agb {
+	margin: 0 auto;
+	max-width: 30em;
+	text-align: justify;
+}
+#agb p {
+	text-align: justify;
+}
+
 
 @media (prefers-color-scheme: light) {
 	:root {
