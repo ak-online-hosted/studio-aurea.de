@@ -56,10 +56,10 @@ a {
 	margin-left: -1em;
 }
 
-#imprint {
+#kontakt {
 	font-size: 1rem;
 }
-#imprint h2 {
+#kontakt h2 {
 	font-size: 1rem;
 }
 
@@ -70,13 +70,17 @@ a {
 	justify-content: center;
 }
 
-#imprint div {
+#kontakt div {
 	flex: 42%;
 	margin: 0 1rem;
 }
 
-#imprint div:first-child {
+#kontakt div:first-child {
 	text-align: right;
+}
+
+#footer {
+	text-decoration: none;
 }
 
 @media (prefers-color-scheme: light) {
@@ -93,8 +97,8 @@ a {
 	.flex-container {
 		flex-direction: column;
 	}
-	#imprint div,
-	#imprint div:first-child {
+	#kontakt div,
+	#kontakt div:first-child {
 		text-align: center;
 	}
 }
