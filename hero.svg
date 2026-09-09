@@ -24,6 +24,8 @@
          offset="1"
          id="stop8" /></linearGradient><style
        id="style2"><![CDATA[
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Ephesis&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
 .fill-gold { 
     fill:url(#pattern2);
     fill-opacity:1;
