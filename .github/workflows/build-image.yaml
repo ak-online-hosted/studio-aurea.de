@@ -76,7 +76,7 @@ jobs:
           renderEngine: 'kustomize'
           kustomizationPath: './k8s/${{ github.ref_name }}/'
 
-      - uses: Azure/k8s-deploy@v4
+      - uses: Azure/k8s-deploy@v7
         with:
           namespace: 'hosted'
           manifests: ${{ steps.bake.outputs.manifestsBundle }}
