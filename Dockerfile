@@ -1,4 +1,4 @@
-FROM docker.io/library/nginx:1.29.4
+FROM docker.io/library/nginx:1.31.5
 
 COPY . /usr/share/nginx/html/
 
