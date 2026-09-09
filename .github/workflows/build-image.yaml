@@ -63,7 +63,7 @@ jobs:
 
       - uses: azure/setup-kubectl@v3
 
-      - uses: azure/k8s-set-context@v3
+      - uses: azure/k8s-set-context@v5
         id: setcontext
         with:
           method: service-account
