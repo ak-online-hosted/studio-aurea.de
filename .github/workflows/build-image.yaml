@@ -61,7 +61,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - uses: azure/setup-kubectl@v3
+      - uses: azure/setup-kubectl@v5
 
       - uses: azure/k8s-set-context@v3
         id: setcontext
