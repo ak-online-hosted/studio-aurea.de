@@ -63,6 +63,17 @@ a {
 	text-align: right;
 }
 
+#mainnav {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-size: 2.0rem;
+}
+#mainnav li {
+	display: inline;
+}
+
 #footer {
 	list-style-type: none;
 	margin: 0;
@@ -85,6 +96,18 @@ h1, h2 {
 }
 #agb p {
 	text-align: justify;
+}
+
+#preise {
+	margin: 0 auto;
+	max-width: 40em;
+	text-align: left;
+}
+#preise p {
+	text-align: left;
+}
+#preise .price {
+	float: right;
 }
 
 
